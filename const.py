@@ -15,13 +15,13 @@ START_KB = InlineKeyboardMarkup(
         [
             InlineKeyboardButton('🔗 ᴏᴜʀ ᴄʜᴀɴᴇʟꜱ ʟɪɴᴋꜱ 🔗', url='https://t.me/CINEMAHUB_LINK')
             ],[
-            InlineKeyboardButton('📌 ᴍʏ ɢʀᴏᴜᴘ', url='https://t.me/+8TAZr0iTGgQ1MmI1'),
+            InlineKeyboardButton('📌 ᴍʏ ɢʀᴏᴜᴘ', url='https://t.me/+7F5XDIEWgD05Y2I1'),
             InlineKeyboardButton('🛠 ᴍʏ ᴏᴡɴᴇʀ', url='https://t.me/BATMAN_CINEMAHUB')
             ],[
             InlineKeyboardButton('⚠️ ʜᴇʟᴘ', callback_data='help_cb'),
             InlineKeyboardButton('⚙️ ᴀʙᴏᴜᴛ', callback_data='about_cb')
             ],[
-            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url='http://t.me/JERRYCINEMABOT?startgroup=true')           
+            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url='https://t.me/tomcinemahubbot?startgroup=true')           
         ]
     ]
 )
@@ -36,7 +36,7 @@ HELP_KB = InlineKeyboardMarkup(
 
 #START_MSG = "Hi **[{}](tg://user?id={})**, I am a an autofilter bot which finds & shares media from my database."
 START_MSG = """Hi **[{}](tg://user?id={})**, 
-**ഞാൻ ഒരു 𝐀𝐔𝐓𝐎 𝐅𝐈𝐋𝐓𝐄𝐑 𝐁𝐎𝐓 ആണ്, എന്റെ ഉടമസ്ഥർ  <a href='https://t.me/+8TAZr0iTGgQ1MmI1'>CINEMA-HUB</a> ആണ്, നിങ്ങൾക്കും നിങ്ങളുടെ ഗ്രൂപ്പുകളിൽ ഇപ്പോൾ എന്നെ ഉപയോഗിക്കാവുന്നതാണ്**"""
+**ഞാൻ ഒരു 𝐀𝐔𝐓𝐎 𝐅𝐈𝐋𝐓𝐄𝐑 𝐁𝐎𝐓 ആണ്, എന്റെ ഉടമസ്ഥർ  <a href='https://t.me/+7F5XDIEWgD05Y2I1'>CINEMA-HUB</a> ആണ്, നിങ്ങൾക്കും നിങ്ങളുടെ ഗ്രൂപ്പുകളിൽ ഇപ്പോൾ എന്നെ ഉപയോഗിക്കാവുന്നതാണ്**"""
 
 ST_HELP_MSG = """
 **You can find the bot commands here.**
@@ -51,7 +51,7 @@ ST_HELP_MSG = """
 - __If List, bot will return results in list format__
 - __If HyperLink, bot will return results in hyperlink format__"""
 
-ABOUT_MSG = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: <a href='https://t.me/JERRYCINEMABOT'>JERRY BOT</a>
+ABOUT_MSG = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: <a href='https://t.me/tomcinemahubbot'>TOM BOT</a>
 ✯ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/BATMAN_CINEMAHUB'>Tʜɪs ᴘᴇʀsᴏɴ</a>
 ✯ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>
 ✯ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/download/releases/3.0/'>Pʏᴛʜᴏɴ 3</a>
@@ -73,7 +73,6 @@ HELP_MSG = """
 - __If HyperLink, bot will return results in hyperlink format__
 
 **Admin Commands:-**
-‣/logs - __Get logs as a file__
 ‣/server - __Get server stats__
 ‣/restart - __Restart the bot__
 ‣/stats - __Get bot user stats__
@@ -82,13 +81,6 @@ HELP_MSG = """
 __You can just forward the message from database channel for starting indexing, no need to use the /index command__
 /indexlink - __Start indexing a database channel using link (bot must be admin of the channel if that is private channel)__
 __`/indexlink <last message link>` or `/indexlink <start message link> <last message link>`__
-‣/delete - __Reply to a file to delete it from database__
-‣/autodelete - __Set file auto delete time in seconds__
-‣/buttondel - __Set button message in groups auto delete time in seconds__
-‣/repairmode - __Enable or disable repair mode - If on, bot will not send any files__
-‣/customcaption - __Set custom caption for files__ - `/customcaption caption/off`
-‣/setcaptionplus - __Set additional caption for files along with caption__ - `/setcaptionplus caption/off`
-‣/adminsettings - __Get current admin settings__
 ‣/ban - __Ban a user from bot__ - `/ban user_id`
 ‣/unban - __Unban a user from bot__ - `/unban user_id`
 ‣/addfilter - __Add a text filter__ - `/addfilter filter message` __or__ `/addfilter "filter multiple words" message` __(If a filter is there, bot will send the filter rather than file)__
