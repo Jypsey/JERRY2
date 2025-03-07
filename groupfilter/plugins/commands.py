@@ -17,23 +17,23 @@ from groupfilter.plugins.serve import get_files, filter_, scheduler
 async def start(bot, update):
     if len(update.command) == 1:
         user_id = update.from_user.id
-        name = update.from_user.first_name if update.from_user.first_name else " "
-        user_name = (
-            "@" + update.from_user.username if update.from_user.username else None
-        )
-        await add_user(user_id, user_name)
+        name = update.from_user.first_name if update.from_user.first_name else "User"
+        user_name = "@" + update.from_user.username if update.from_user.username else "No_Username"
+
+        await add_user(user_id, user_name)  # Store user info in DB
 
         try:
-            start_msg = START_MSG.format(name, user_id)
+            start_msg = START_MSG.format(name=name, user_id=user_id, user_name=user_name)
         except Exception as e:
             LOGGER.warning(e)
-            start_msg = STARTMSG.format(name, user_id)
+            start_msg = STARTMSG.format(name=name, user_id=user_id, user_name=user_name)
+
         await update.reply_video(
-            video="https://graph.org/file/92bcf73a0428be54e2d59.mp4",
+            video="https://envs.sh/JXQ.mp4",
             caption=start_msg,
             reply_to_message_id=update.reply_to_message_id,
             reply_markup=START_KB,
-            parse_mode=enums.ParseMode.MARKDOWN
+            parse_mode=enums.ParseMode.HTML
         )
         '''await bot.send_message(
             chat_id=update.chat.id,
