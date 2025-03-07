@@ -21,7 +21,7 @@ START_KB = InlineKeyboardMarkup(
             InlineKeyboardButton('⚠️ ʜᴇʟᴘ', callback_data='help_cb'),
             InlineKeyboardButton('⚙️ ᴀʙᴏᴜᴛ', callback_data='about_cb')
             ],[
-            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url='https://t.me/tomcinemahubbot?startgroup=true')           
+            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url='https://t.me/JERRYCINEMAHUB_BOT?startgroup=true')           
         ]
     ]
 )
