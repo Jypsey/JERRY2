@@ -205,3 +205,20 @@ async def delete_fsub_reg_id(user_id, chat_id):
                 "Error occurred while deleting user requests of chat: %s", str(e)
             )
             return False
+
+async def remove_fsub_users():
+    async with INSERTION_LOCK:
+        session = SESSION()
+        try:
+            session.query(FsubReq).delete()
+            session.commit()
+            session.query(FsubReg).delete()
+            session.commit()
+            LOGGER.warning("Removed all fsub users")
+            return True
+        except Exception as e:
+            session.rollback()
+            LOGGER.warning("Error removing fsub users: %s", str(e))
+            return False
+        finally:
+            session.close()
