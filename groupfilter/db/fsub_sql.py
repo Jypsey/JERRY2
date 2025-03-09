@@ -101,10 +101,17 @@ async def get_fsub_count(chat_id):
     async with INSERTION_LOCK:
         session = SESSION()
         try:
-            entry = session.query(FsubCount).filter(FsubCount.chat_id == chat_id).one()
-            return entry.count
-        except NoResultFound:
+            entry = session.query(FsubCount).filter(FsubCount.chat_id == chat_id).one_or_none()
+            if entry:
+                print(f"[DEBUG] Fetching force sub count for {chat_id}, Count: {entry.count}")
+                return entry.count
+            else:
+                print(f"[DEBUG] No force sub count found for {chat_id}, Returning 0")
+                return 0  # Return 0 if no data is found
+        except Exception as e:
+            print(f"[ERROR] Failed to fetch force sub count: {str(e)}")
             return 0
+
 
 async def reset_fsub_count(chat_id):
     async with INSERTION_LOCK:
