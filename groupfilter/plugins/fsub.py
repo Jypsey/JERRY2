@@ -3,6 +3,8 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQ
 from pyrogram.enums import ParseMode, ChatMemberStatus
 from pyrogram.errors import UserNotParticipant
 from groupfilter import LOGGER, ADMINS
+from groupfilter.db.fsub_sql import get_fsub_count
+
 from groupfilter.db.fsub_sql import (
     add_fsub_req_user,
     is_req_user,
