@@ -80,18 +80,17 @@ async def is_req_user(user_id, chat_id):
         except NoResultFound:
             return False
 
-async def increase_fsub_count(chat_id):
+async def increase_fsub_request(chat_id):
     async with INSERTION_LOCK:
         session = SESSION()
         try:
             entry = session.query(FsubCount).filter(FsubCount.chat_id == chat_id).one()
-            entry.count += 1
+            entry.count += 1  # Increase request count
             session.commit()
         except NoResultFound:
             new_entry = FsubCount(chat_id=chat_id, count=1)
             session.add(new_entry)
             session.commit()
-
 async def get_fsub_count(chat_id):
     async with INSERTION_LOCK:
         session = SESSION()
