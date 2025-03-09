@@ -234,3 +234,13 @@ async def remove_fsub_users():
             return False
         finally:
             session.close()
+
+async def ensure_fsub_table():
+    async with INSERTION_LOCK:
+        session = SESSION()
+        try:
+            session.execute("ALTER TABLE fsubcount ALTER COLUMN chat_id TYPE BIGINT;")
+            session.commit()
+            print("[INFO] Ensured fsubcount.chat_id is BIGINT")
+        except Exception as e:
+            print(f"[WARNING] Could not alter fsubcount table: {str(e)}")
