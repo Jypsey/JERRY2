@@ -344,6 +344,7 @@ async def force_sub(bot, update):
 
     try:
         link = await bot.create_chat_invite_link(channel, creates_join_request=request)
+        await increase_fsub_request(channel)
         inv_link = link.invite_link
     except Exception as e:
         await update.reply_text(f" Error while creating channel invite link: {str(e)}")
@@ -691,5 +692,6 @@ async def tcount(bot, update):
         await update.reply_text("Force subscription is not enabled.")
         return
     
-    count = await get_fsub_count(fsub_channel)
-    await update.reply_text(f"Total users joined after force subscription: `{count}`")
+    count = await get_fsub_count(fsub_channel)  # Get join request count
+    await update.reply_text(f"Total users who requested to join: `{count}`")
+
