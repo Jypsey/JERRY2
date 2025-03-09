@@ -1,4 +1,5 @@
 import threading
+from groupfilter.db.fsub_sql import reset_fsub_count
 from sqlalchemy import create_engine
 from sqlalchemy import Column, TEXT, Boolean, Numeric, BigInteger
 from sqlalchemy.ext.declarative import declarative_base
@@ -194,6 +195,7 @@ async def set_force_sub(channel):
                 session.add(admin_setting)
                 session.commit()
 
+            await reset_fsub_count(channel)
             admin_setting.fsub_channel = channel
             session.commit()
 
