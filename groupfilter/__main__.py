@@ -2,6 +2,8 @@ import uvloop
 from pyrogram import Client, idle, __version__
 from pyrogram.raw.all import layer
 from groupfilter import APP_ID, API_HASH, BOT_TOKEN
+from groupfilter.db.fsub_sql import ensure_fsub_table  # Import the database fix function
+
 
 uvloop.install()
 
@@ -19,6 +21,8 @@ async def main():
         bot_token=BOT_TOKEN,
         plugins=plugins,
     )
+    await ensure_fsub_table()
+    print("[INFO] Database structure checked.")
     async with app:
         me = await app.get_me()
         print(
