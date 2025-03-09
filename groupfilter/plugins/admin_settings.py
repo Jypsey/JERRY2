@@ -681,3 +681,15 @@ async def button_delete_(bot, update):
 
     else:
         await update.reply_text("Please send in proper format `/buttondel seconds`")
+@Client.on_message(
+    filters.private & filters.command(["tcount"]) & filters.user(ADMINS)
+)
+async def tcount(bot, update):
+    admin_settings = await get_admin_settings()
+    fsub_channel = admin_settings.fsub_channel
+    if not fsub_channel:
+        await update.reply_text("Force subscription is not enabled.")
+        return
+    
+    count = await get_fsub_count(fsub_channel)
+    await update.reply_text(f"Total users joined after force subscription: `{count}`")
