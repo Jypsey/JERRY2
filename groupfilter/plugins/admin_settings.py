@@ -25,6 +25,7 @@ from groupfilter.db.filters_sql import add_filter, rem_filter, list_filters
 from groupfilter.db.files_sql import count_files
 from groupfilter.db.broadcast_sql import count_users
 from groupfilter.db.fsub_sql import get_fsub_count
+from groupfilter.db.fsub_sql import increase_fsub_request  # ✅ Import the function
 from groupfilter import ADMINS, DB_CHANNELS
 
 
